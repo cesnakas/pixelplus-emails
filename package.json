@@ -20,6 +20,10 @@
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-inline-css": "^4.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "inky": "^1.4.2",
     "panini": "^1.7.2",

@@ -95,14 +95,27 @@ const images = () => {
 const inline = () => {
     return gulp.src('dist/**/*.html')
         .pipe(inlineCss({
+            // Встраивать стили в файлы <style></style> [true]
             applyStyleTags: false,
+            // Удалять исходные <style></style> теги после встраивания из них css [true]
             removeStyleTags: true,
+            // Следует ли разрешать <link rel="stylesheet"> теги и встраивать полученные стили [true]
+            // applyLinkTags: true,
+            // Удалять исходные <link rel="stylesheet"> после встраивания из них css [true]
+            removeLinkTags: false,
+            // Сохраняет все медиа-запросы (и содержащиеся в них стили) в <style></style> тегах в качестве уточнения, когда removeStyleTags установлено значение true. Другие стили удалены. [false]
             preserveMediaQueries: true,
-            removeLinkTags: false
+            // removeHtmlSelectors: false,
+            // applyWidthAttributes: true,
+            // applyTableAttributes: true,
+            // lowerCaseTags: true,
+            // lowerCaseAttributeNames: true,
         }))
-        .pipe(replace('<!-- <style> -->', ``))
-        .pipe(replace('<link rel="stylesheet" type="text/css" href="css/app.css">', ''))
-        .pipe(htmlMin({collapseWhitespace: true, minifyCSS: true}))
+        // .pipe(inLiner('./dist/css/app.css'))
+        /*.pipe(htmlMin({
+            collapseWhitespace: true,
+            minifyCSS: true
+        }))*/
         .pipe(gulp.dest(`${destFolder}`))
         .pipe(browserSync.stream())
 }

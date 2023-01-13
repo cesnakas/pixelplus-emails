@@ -105,7 +105,7 @@ $button-font-size: (
   small: 12px,
   default: 16px,
   large: 20px,
-);
+) !default;
 $button-color: $white !default;
 $button-color-alt: $medium-gray !default;
 $button-font-weight: bold !default;

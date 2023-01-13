@@ -1,0 +1,106 @@
+
+body, html, .body {
+  background: url("./assets/img/quiz/bg.png") center repeat #050025 !important;
+}
+
+a {
+  font-weight: 500;
+  color: #BC1818;
+}
+
+.d-block {display: block;}
+.d-inline {display: inline-block;}
+.img {display: initial;}
+
+.container.header {
+  background: #f3f3f3;
+}
+
+// Header Styles
+// -------
+
+.header {
+  background: #F7F7F7;
+
+  p {
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 3px;
+    text-align: right;
+    font-size: 12px;
+    color: #BD0B13;
+
+    &.text-lg {
+      font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  .wrapper-inner {
+    padding: 20px 16px 20px 0;
+  }
+}
+
+// Main Styles
+// -------
+
+.welcome-text {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 24px;
+}
+.title {
+  margin-bottom: 32px;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #BC1818;
+
+  span {
+    color: #2D2D2D;
+  }
+}
+.subtitle {
+  margin-top: 24px;
+  margin-bottom: 32px !important;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2D2D2D;
+}
+
+// Footer styles
+// -------
+
+.footer {
+
+  p {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+}

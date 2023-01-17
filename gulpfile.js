@@ -95,27 +95,31 @@ const images = () => {
 const inline = () => {
     return gulp.src('dist/**/*.html')
         .pipe(inlineCss({
-            // Встраивать стили в файлы <style></style> [true]
-            applyStyleTags: false,
-            // Удалять исходные <style></style> теги после встраивания из них css [true]
+            // Встраивать стили в файлы <style></style> [default: true]
+            applyStyleTags: true,
+
+            // Удалять теги <style></style> после встраивания в style="" [default: true]
             removeStyleTags: true,
-            // Следует ли разрешать <link rel="stylesheet"> теги и встраивать полученные стили [true]
-            // applyLinkTags: true,
+
+            // Вставлять стили из <link rel="stylesheet"> в inline стили [default: true]
+            applyLinkTags: true,
+
             // Удалять исходные <link rel="stylesheet"> после встраивания из них css [true]
-            removeLinkTags: false,
-            // Сохраняет все медиа-запросы (и содержащиеся в них стили) в <style></style> тегах в качестве уточнения, когда removeStyleTags установлено значение true. Другие стили удалены. [false]
+            removeLinkTags: true,
+
+            // Сохраняет все медиа-запросы (и содержащиеся в них стили) в <style></style> тегах в качестве уточнения, когда removeStyleTags установлено значение true. Другие стили удалены. [default: false]
             preserveMediaQueries: true,
+
             // removeHtmlSelectors: false,
             // applyWidthAttributes: true,
-            // applyTableAttributes: true,
+            applyTableAttributes: false, // [default: false]
             // lowerCaseTags: true,
             // lowerCaseAttributeNames: true,
         }))
-        // .pipe(inLiner('./dist/css/app.css'))
-        /*.pipe(htmlMin({
+        .pipe(htmlMin({
             collapseWhitespace: true,
             minifyCSS: true
-        }))*/
+        }))
         .pipe(gulp.dest(`${destFolder}`))
         .pipe(browserSync.stream())
 }

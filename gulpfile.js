@@ -127,9 +127,10 @@ const inline = () => {
 
 /** Watcher */
 const watcher = () => {
-    gulp.watch(path.watch.emails, emails).on('all', gulp.series(emails, inline, browserSync.reload))
-    gulp.watch(path.watch.styles, styles).on('all', gulp.series(reset, styles, emails, images, inline, browserSync.reload))
-    gulp.watch(path.watch.images, images).on('all', gulp.series(images, emails, inline, browserSync.reload));
+    gulp.watch(path.watch.emails, emails).on('change', gulp.series(emails, styles, inline, browserSync.reload))
+    // gulp.watch(path.watch.styles, styles).on('all', gulp.series(reset, styles, emails, images, inline, browserSync.reload))
+    gulp.watch(path.watch.styles, styles).on('change', gulp.series(reset, styles, emails, images, inline, browserSync.reload))
+    gulp.watch(path.watch.images, images).on('change', gulp.series(images, browserSync.reload));
 }
 
 const emailTasks = gulp.series(emails, styles, images, inline)

@@ -87,7 +87,10 @@ const styles = () => {
 const images = () => {
     return gulp.src(['src/assets/img/**/*', '!src/assets/img/archive/**/*'])
         .pipe(newer(`${destFolder}/assets/img`))
-        .pipe(imagemin())
+        .pipe(imagemin({
+            quality: 80, // jpg
+            optimizationLevel: 5, // png
+        }))
         .pipe(gulp.dest(`${destFolder}/assets/img`))
         .pipe(browserSync.stream())
 }

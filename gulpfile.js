@@ -9,6 +9,7 @@ import inky          from 'inky'
 import dartSass      from 'sass'
 import gulpSass      from 'gulp-sass'
 import imagemin      from 'gulp-imagemin'
+import newer         from 'gulp-newer'
 import replace       from 'gulp-replace'
 import inlineCss     from 'gulp-inline-css'
 import htmlMin       from 'gulp-htmlmin'
@@ -85,6 +86,7 @@ const styles = () => {
 /** Images */
 const images = () => {
     return gulp.src(['src/assets/img/**/*', '!src/assets/img/archive/**/*'])
+        .pipe(newer(`${destFolder}/assets/img`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${destFolder}/assets/img`))
         .pipe(browserSync.stream())
@@ -128,7 +130,6 @@ const inline = () => {
 /** Watcher */
 const watcher = () => {
     gulp.watch(path.watch.emails, emails).on('change', gulp.series(emails, styles, inline, browserSync.reload))
-    // gulp.watch(path.watch.styles, styles).on('all', gulp.series(reset, styles, emails, images, inline, browserSync.reload))
     gulp.watch(path.watch.styles, styles).on('change', gulp.series(reset, styles, emails, images, inline, browserSync.reload))
     gulp.watch(path.watch.images, images).on('change', gulp.series(images, browserSync.reload));
 }

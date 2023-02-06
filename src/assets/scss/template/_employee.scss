@@ -37,7 +37,6 @@
     min-width: 168px;
     max-width: 168px;
     height: auto;
-    margin-top: 25px !important;
     margin-left: -40px;
     @media only screen and (max-width: 596px) {
       margin: 0 auto !important;
@@ -46,6 +45,7 @@
 
   &-title {
     margin-bottom: 16px;
+    padding-left: 20px;
     font-size: 18px !important;
     font-weight: 700 !important;
     line-height: 22px !important;
@@ -53,12 +53,14 @@
   }
   &-subtitle {
     margin-bottom: 16px;
+    padding-left: 20px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px !important;
   }
   &-bonus {
     margin-bottom: 10px !important;
+    padding-left: 20px;
     font-weight: 700 !important;
     font-size: 14px;
     line-height: 16px !important;
@@ -82,6 +84,9 @@
       span {
         white-space: nowrap;
       }
+    }
+    &-left {
+      padding-left: 20px;
     }
   }
 }

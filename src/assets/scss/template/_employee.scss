@@ -29,7 +29,15 @@
     background-size: cover;
 
     > tbody > tr > th {
-      padding: 25px 20px !important;
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      &.first {
+        padding-right: 0 !important;
+      }
+      &.last {
+        padding-left: 10px !important;
+      }
     }
   }
 
@@ -71,17 +79,18 @@
     &-right {
       font-size: 14px;
       font-weight: 700 !important;
-      letter-spacing: -.025em;
+      //letter-spacing: -.025em;
       text-transform: uppercase !important;
 
       b {
         display: block;
-        font-size: 52px;
-        line-height: 56px;
+        font-size: 48px;
+        line-height: 52px;
         letter-spacing: normal;
         white-space: nowrap;
       }
       span {
+        font-size: 13px;
         white-space: nowrap;
       }
     }
